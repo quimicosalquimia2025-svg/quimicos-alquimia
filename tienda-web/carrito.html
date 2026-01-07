@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Carrito de compras - Químicos Alquimia" />
+    <meta name="author" content="Químicos Alquimia" />
+
+    <title>Carrito | Químicos Alquimia</title>
+
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="container topbar__content">
+        <p class="topbar__text">📦 Envíos en Manizales | Atención Lun–Sáb 9:00am – 5:30pm</p>
+        <div class="topbar__links">
+          <a class="topbar__link" href="./contacto.html">Contacto</a>
+          <span class="topbar__sep">|</span>
+          <a class="topbar__link" href="./productos.html">Ver productos</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+      <div class="container header__content">
+        <a class="brand" href="./index.html" aria-label="Ir al inicio">
+          <img class="brand__logo" src="./assets/logo-alquimia.jpeg" alt="Logo Químicos Alquimia" />
+          <div class="brand__text">
+            <strong class="brand__name">Químicos Alquimia</strong>
+            <span class="brand__tagline">Tienda de productos químicos</span>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="Navegación principal">
+          <a class="nav__link" href="./index.html">Inicio</a>
+          <a class="nav__link" href="./productos.html">Productos</a>
+          <a class="nav__link" href="./contacto.html">Contacto</a>
+        </nav>
+
+        <div class="header__actions">
+          <a class="cart-btn" href="./carrito.html" aria-label="Ir al carrito">
+            🛒 <span class="cart-btn__text">Carrito</span>
+            <span class="cart-btn__count" id="cartCount">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="section">
+      <div class="container">
+        <header class="section__header">
+          <h1 class="section__title">Tu carrito</h1>
+          <p class="section__subtitle">Revisa cantidades, elimina productos y finaliza tu pedido por WhatsApp.</p>
+        </header>
+
+        <section class="cart">
+          <div class="cart__layout">
+            <!-- Items -->
+            <div class="cart__items">
+              <div class="cart__top">
+                <p class="cart__hint" id="cartHint">Cargando carrito...</p>
+
+                <button class="btn btn--outline cart__clear" id="btnClearCart" type="button">
+                  Vaciar carrito
+                </button>
+              </div>
+
+              <div class="cart__list" id="cartList">
+                <!-- Items render -->
+              </div>
+
+              <div class="cart__empty" id="cartEmpty" hidden>
+                <p><strong>Tu carrito está vacío.</strong></p>
+                <p class="footer__text">Vuelve al catálogo para agregar productos.</p>
+                <a class="btn btn--primary" href="./productos.html">Ir a productos</a>
+              </div>
+            </div>
+
+            <!-- Summary -->
+            <aside class="cart__summary">
+              <h2 class="cart__summary-title">Resumen</h2>
+
+              <div class="cart__summary-row">
+                <span>Subtotal</span>
+                <strong id="subtotal">$ 0</strong>
+              </div>
+
+              <div class="cart__summary-row">
+                <span>Envío</span>
+                <strong id="shipping">$ 0</strong>
+              </div>
+
+              <div class="cart__summary-divider"></div>
+
+              <div class="cart__summary-row cart__summary-row--total">
+                <span>Total</span>
+                <strong id="total">$ 0</strong>
+              </div>
+
+              <a class="btn btn--primary cart__whatsapp" id="btnWhatsApp" href="#" target="_blank" rel="noreferrer">
+                Finalizar por WhatsApp
+              </a>
+
+              <p class="cart__note">
+                Al finalizar, se generará un mensaje con tu pedido para enviarlo por WhatsApp.
+              </p>
+            </aside>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__content">
+        <div class="footer__col">
+          <strong>Químicos Alquimia</strong>
+          <p class="footer__text">Manizales, Colombia</p>
+          <p class="footer__text">Horario: Lun–Sáb 8:00am – 6:00pm</p>
+        </div>
+
+        <div class="footer__col">
+          <strong>Enlaces</strong>
+          <a class="footer__link" href="./productos.html">Productos</a>
+          <a class="footer__link" href="./carrito.html">Carrito</a>
+          <a class="footer__link" href="./contacto.html">Contacto</a>
+        </div>
+
+        <div class="footer__col">
+          <strong>Contacto</strong>
+          <p class="footer__text">WhatsApp: +57 300 000 0000</p>
+          <p class="footer__text">Email: ventas@quimicosalquimia.com</p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="container footer__bottom-content">
+          <small>© <span id="year"></span> Químicos Alquimia. Todos los derechos reservados.</small>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/cart.js"></script>
+    <script src="./js/pages-carrito.js"></script>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.QACart) window.QACart.updateCartCount();
+      });
+    </script>
+  </body>
+</html>

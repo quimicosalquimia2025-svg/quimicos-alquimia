@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Catálogo de productos - Químicos Alquimia" />
+    <meta name="keywords" content="químicos, catálogo, limpieza, industria, velas" />
+    <meta name="author" content="Químicos Alquimia" />
+
+    <title>Productos | Químicos Alquimia</title>
+
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="container topbar__content">
+        <p class="topbar__text">📦 Envíos en Manizales | Atención Lun–Sáb 9:00am – 5:30pm</p>
+        <div class="topbar__links">
+          <a class="topbar__link" href="./contacto.html">Contacto</a>
+          <span class="topbar__sep">|</span>
+          <a class="topbar__link" href="./carrito.html">Ver carrito</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+      <div class="container header__content">
+        <a class="brand" href="./index.html" aria-label="Ir al inicio">
+          <img class="brand__logo" src="./assets/logo-alquimia.jpeg" alt="Logo Químicos Alquimia" />
+          <div class="brand__text">
+            <strong class="brand__name">Químicos Alquimia</strong>
+            <span class="brand__tagline">Tienda de productos químicos</span>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="Navegación principal">
+          <a class="nav__link" href="./index.html">Inicio</a>
+          <a class="nav__link nav__link--active" href="./productos.html">Productos</a>
+          <a class="nav__link" href="./contacto.html">Contacto</a>
+        </nav>
+
+        <div class="header__actions">
+          <form class="search" id="searchForm" autocomplete="off">
+            <label class="search__label" for="q">Buscar</label>
+            <input class="search__input" type="search" id="q" name="q" placeholder="Buscar productos..." />
+            <button class="search__btn" type="submit">Buscar</button>
+          </form>
+
+          <a class="cart-btn" href="./carrito.html" aria-label="Ir al carrito">
+            🛒 <span class="cart-btn__text">Carrito</span>
+            <span class="cart-btn__count" id="cartCount">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="section">
+      <div class="container">
+        <header class="section__header">
+          <h1 class="section__title">Catálogo de productos</h1>
+          <p class="section__subtitle">Filtra por categoría, disponibilidad o busca por nombre.</p>
+        </header>
+
+        <!-- Filtros -->
+        <section class="filters">
+          <div class="filters__grid">
+            <div class="filters__field">
+              <label class="filters__label" for="filterCategory">Categoría</label>
+              <select class="filters__control" id="filterCategory">
+                <option value="all">Todas</option>
+                <option value="limpieza">Limpieza</option>
+                <option value="industria">Industria</option>
+                <option value="hogar">Hogar</option>
+                <option value="automotriz">Automotriz</option>
+                <option value="velas">Insumos para velas</option>
+              </select>
+            </div>
+
+            <div class="filters__field">
+              <label class="filters__label" for="sortBy">Ordenar</label>
+              <select class="filters__control" id="sortBy">
+                <option value="relevance">Relevancia</option>
+                <option value="priceAsc">Precio: menor a mayor</option>
+                <option value="priceDesc">Precio: mayor a menor</option>
+                <option value="nameAsc">Nombre: A → Z</option>
+              </select>
+            </div>
+
+            <div class="filters__field filters__field--check">
+              <label class="filters__check">
+                <input type="checkbox" id="onlyStock" />
+                <span>Solo disponibles</span>
+              </label>
+            </div>
+
+            <div class="filters__field filters__field--btn">
+              <button class="btn btn--outline" id="btnClear">Limpiar filtros</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Resultados -->
+        <section class="catalog">
+          <div class="catalog__top">
+            <p class="catalog__count" id="resultsCount">Cargando productos...</p>
+          </div>
+
+          <div class="catalog__grid" id="productsGrid" aria-live="polite">
+            <div class="skeleton">Cargando catálogo...</div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__content">
+        <div class="footer__col">
+          <strong>Químicos Alquimia</strong>
+          <p class="footer__text">Manizales, Colombia</p>
+          <p class="footer__text">Horario: Lun–Sáb 8:00am – 6:00pm</p>
+        </div>
+
+        <div class="footer__col">
+          <strong>Enlaces</strong>
+          <a class="footer__link" href="./productos.html">Productos</a>
+          <a class="footer__link" href="./carrito.html">Carrito</a>
+          <a class="footer__link" href="./contacto.html">Contacto</a>
+        </div>
+
+        <div class="footer__col">
+          <strong>Contacto</strong>
+          <p class="footer__text">WhatsApp: +57 313 793 5761</p>
+          <p class="footer__text">Email: quimicosalquimia2025@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="container footer__bottom-content">
+          <small>© <span id="year"></span> Químicos Alquimia. Todos los derechos reservados.</small>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/ui.js"></script>
+    <script src="./js/pages-productos.js"></script>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+{
+  "store": {
+    "name": "Químicos Alquimia",
+    "currency": "COP",
+    "whatsapp": "+573137935761"
+  },
+  "products": [
+    {
+      "id": "QA-001",
+      "name": "Cloro 1L",
+      "category": "limpieza",
+      "price": 8500,
+      "unit": "botella",
+      "stock": 50,
+      "featured": true,
+      "active": true,
+      "image": "./assets/producto-placeholder.jpeg",
+      "shortDescription": "Desinfección y limpieza general.",
+      "tags": ["hogar", "desinfección"]
+    },
+    {
+      "id": "QA-002",
+      "name": "Desengrasante 1L",
+      "category": "automotriz",
+      "price": 12000,
+      "unit": "botella",
+      "stock": 30,
+      "featured": true,
+      "active": true,
+      "image": "./assets/producto-placeholder.jpeg",
+      "shortDescription": "Remueve grasa y suciedad difícil.",
+      "tags": ["motor", "taller"]
+    },
+    {
+      "id": "QA-003",
+      "name": "Alcohol 70% 500ml",
+      "category": "hogar",
+      "price": 9000,
+      "unit": "botella",
+      "stock": 40,
+      "featured": false,
+      "active": true,
+      "image": "./assets/producto-placeholder.jpeg",
+      "shortDescription": "Uso general para desinfección.",
+      "tags": ["hogar"]
+    },
+    {
+      "id": "QA-004",
+      "name": "Ácido muriático 1L",
+      "category": "industria",
+      "price": 11000,
+      "unit": "botella",
+      "stock": 20,
+      "featured": false,
+      "active": true,
+      "image": "./assets/producto-placeholder.jpeg",
+      "shortDescription": "Uso industrial (manejo con precaución).",
+      "tags": ["industria"]
+    },
+    {
+      "id": "QA-005",
+      "name": "Cera de soya 1kg",
+      "category": "velas",
+      "price": 28000,
+      "unit": "bolsa",
+      "stock": 15,
+      "featured": true,
+      "active": true,
+      "image": "./assets/producto-placeholder.jpeg",
+      "shortDescription": "Ideal para velas artesanales, quemado limpio.",
+      "tags": ["velas", "artesanal"]
+    },
+    {
+      "id": "QA-006",
+      "name": "Mecha encerada (pack x10)",
+      "category": "velas",
+      "price": 6500,
+      "unit": "paquete",
+      "stock": 60,
+      "featured": false,
+      "active": true,
+      "image": "./assets/producto-placeholder.jpeg",
+      "shortDescription": "Mechas listas para usar en velas.",
+      "tags": ["velas"]
+    },
+    {
+      "id": "QA-007",
+      "name": "Esencia vainilla 30ml",
+      "category": "velas",
+      "price": 7000,
+      "unit": "frasco",
+      "stock": 25,
+      "featured": true,
+      "active": true,
+      "image": "./assets/producto-placeholder.jpeg",
+      "shortDescription": "Fragancia para velas y ambientación.",
+      "tags": ["velas", "aroma"]
+    }
+  ]
+}
