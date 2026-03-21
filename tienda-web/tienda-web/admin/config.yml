@@ -1,0 +1,58 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: simple
+
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: "drzel7pey"
+    api_key: "838966825439686"
+
+site_url: "/"
+display_url: "/"
+logo_url: "/assets/logo-alquimia.jpeg"
+
+collections:
+  - name: "catalogo"
+    label: "Catálogo"
+    format: "json"
+    files:
+      - name: "productos"
+        label: "Productos"
+        file: "data/products.json"
+        fields:
+          - label: "Productos"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.name}} — ${{fields.price}} — Stock: {{fields.stock}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Activo", name: "active", widget: "boolean", default: true }
+
+              - { label: "Nombre", name: "name", widget: "string" }
+              - { label: "Descripción corta", name: "shortDescription", widget: "string", required: false }
+              - { label: "Etiquetas", name: "tags", widget: "list", required: false, default: [] }
+
+              - label: "Categoría"
+                name: "category"
+                widget: "select"
+                options:
+                  - "limpieza"
+                  - "industria"
+                  - "hogar"
+                  - "automotriz"
+                  - "insumos para hacer velas"
+
+              - { label: "Precio (COP)", name: "price", widget: "number", value_type: "int", min: 0 }
+              - { label: "Stock", name: "stock", widget: "number", value_type: "int", min: 0, default: 0 }
+              - { label: "Unidad", name: "unit", widget: "string", required: false, hint: "Ej: botella, bolsa, galón" }
+              - { label: "¿Mostrar en Ofertas del día?", name: "featured", widget: "boolean", default: false }
+              - { label: "Orden en ofertas (menor = primero)", name: "featuredOrder", widget: "number", value_type: "int", default: 999, min: 0 }
+              
+              - label: "Imagen (Cloudinary)"
+                name: "image"
+                widget: "image"
+                required: false
+                hint: "Sube una imagen. Quedará como URL completa (Cloudinary)."
