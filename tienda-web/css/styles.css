@@ -1802,3 +1802,16 @@ html, body {
   }
   .contact__card a { font-size: 0.95rem; }
 }
+
+.product-card__badge-offer{
+  display:inline-block;
+  margin: .35rem 0 .25rem;
+  padding: .2rem .55rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: .75rem;
+  letter-spacing: .4px;
+  background: rgba(118, 214, 125, .25); /* verde suave */
+  border: 1px solid rgba(118, 214, 125, .55);
+  color: #0c3b22;
+}

@@ -13,8 +13,9 @@
       "unit": "botella",
       "stock": 50,
       "featured": true,
+      "featuredOrder": 1,
       "active": true,
-      "image": "./assets/producto-placeholder.jpeg",
+      "image": "",
       "shortDescription": "Desinfección y limpieza general.",
       "tags": ["hogar", "desinfección"]
     },
@@ -26,8 +27,9 @@
       "unit": "botella",
       "stock": 30,
       "featured": true,
+      "featuredOrder": 1,
       "active": true,
-      "image": "./assets/producto-placeholder.jpeg",
+      "image": "",
       "shortDescription": "Remueve grasa y suciedad difícil.",
       "tags": ["motor", "taller"]
     },
@@ -38,9 +40,10 @@
       "price": 9000,
       "unit": "botella",
       "stock": 40,
-      "featured": false,
+      "featured": true,
+      "featuredOrder": 1,
       "active": true,
-      "image": "./assets/producto-placeholder.jpeg",
+      "image": "",
       "shortDescription": "Uso general para desinfección.",
       "tags": ["hogar"]
     },
@@ -51,9 +54,10 @@
       "price": 11000,
       "unit": "botella",
       "stock": 20,
-      "featured": false,
+      "featured": true,
+      "featuredOrder": 1,
       "active": true,
-      "image": "./assets/producto-placeholder.jpeg",
+      "image": "",
       "shortDescription": "Uso industrial (manejo con precaución).",
       "tags": ["industria"]
     },
@@ -65,21 +69,23 @@
       "unit": "bolsa",
       "stock": 15,
       "featured": true,
-      "active": true,
-      "image": "./assets/producto-placeholder.jpeg",
+      "featuredOrder": 1,
+        "active": true,
+      "image": "",
       "shortDescription": "Ideal para velas artesanales, quemado limpio.",
       "tags": ["velas", "artesanal"]
     },
     {
       "id": "QA-006",
       "name": "Mecha encerada (pack x10)",
-      "category": "velas",
+      "category": "insumos para hacer velas",
       "price": 6500,
       "unit": "paquete",
       "stock": 60,
-      "featured": false,
+      "featured": true,
+      "featuredOrder": 1,
       "active": true,
-      "image": "./assets/producto-placeholder.jpeg",
+      "image": "",
       "shortDescription": "Mechas listas para usar en velas.",
       "tags": ["velas"]
     },
@@ -91,10 +97,20 @@
       "unit": "frasco",
       "stock": 25,
       "featured": true,
+      "featuredOrder": 1,
       "active": true,
-      "image": "./assets/producto-placeholder.jpeg",
+      "image": "",
       "shortDescription": "Fragancia para velas y ambientación.",
       "tags": ["velas", "aroma"]
+    },
+    {
+      "id": "test-cloudinary",
+      "name": "Producto prueba Cloudinary",
+      "price": 10000,
+      "stock": 5,
+      "category": "pruebas",
+      "active": true,
+      "image": ""
     }
-  ]
-}
+   ] 
+  }

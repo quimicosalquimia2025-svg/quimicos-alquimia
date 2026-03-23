@@ -4,18 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- VERIFICACIÓN GOOGLE -->
+    <meta name="google-site-verification" content="ZcgZNPVutKnsuREF26tiO4sCqrGodWRXvfpPPJaerVE" />
+
     <!-- SEO básico -->
     <meta name="description" content="Tienda web de Químicos Alquimia. Catálogo, carrito y contacto." />
     <meta name="keywords" content="químicos, tienda, limpieza, insumos, catálogo, carrito" />
     <meta name="author" content="Químicos Alquimia" />
-
     <title>Inicio | Químicos Alquimia</title>
+    
+    <link rel="canonical" href="https://quimicosalquimia.netlify.app/" />
 
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Químicos Alquimia | Tienda de productos químicos">
+    <meta property="og:description" content="Compra químicos e insumos en Manizales. Catálogo, carrito y contacto.">
+    <meta property="og:url" content="https://quimicosalquimia.netlify.app/">
+    <meta property="og:image" content="https://quimicosalquimia.netlify.app/assets/logo-alquimia.jpeg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Químicos Alquimia | Tienda de productos químicos">
+    <meta name="twitter:description" content="Compra químicos e insumos en Manizales. Catálogo, carrito y contacto.">
+    <meta name="twitter:image" content="https://quimicosalquimia.netlify.app/assets/logo-alquimia.jpeg">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="icon" href="./assets/logo-alquimia.jpeg" />
 
     <!-- Favicon opcional (si luego subes uno a /assets) -->
     <!-- <link rel="icon" href="./assets/favicon.ico" /> -->
+
   </head>
 
   <body>
@@ -93,16 +110,13 @@
         </div>
 
         <div class="hero__card">
-          <h2 class="hero__card-title">Ofertas del día</h2>          
+          <h2 class="hero__card-title">Ofertas del día</h2>
 
           <!-- Render dinámico (JS) -->
+           
           <div class="featured" id="featuredGrid" aria-live="polite">
             <div class="skeleton">Cargando productos...</div>
-          </div>
-
-          <p class="hero__small">
-            Tip: si aún no ves productos, es porque falta crear <code>data/products.json</code> y el JS.
-          </p>
+          </div>      
         </div>
       </div>
     </section>

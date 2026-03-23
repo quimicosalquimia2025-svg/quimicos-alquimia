@@ -6,10 +6,24 @@
 
     <meta name="description" content="Contacto - Químicos Alquimia" />
     <meta name="author" content="Químicos Alquimia" />
-
     <title>Contacto | Químicos Alquimia</title>
 
+    <link rel="canonical" href="https://quimicosalquimia.netlify.app/contacto.html" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contacto | Químicos Alquimia">
+    <meta property="og:description" content="Contáctanos para pedidos de productos químicos e insumos en Manizales.">
+    <meta property="og:url" content="https://quimicosalquimia.netlify.app/contacto.html">
+    <meta property="og:image" content="https://quimicosalquimia.netlify.app/assets/logo-alquimia.jpeg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contacto | Químicos Alquimia">
+    <meta name="twitter:description" content="Contáctanos para pedidos de productos químicos e insumos en Manizales.">
+    <meta name="twitter:image" content="https://quimicosalquimia.netlify.app/assets/logo-alquimia.jpeg">
+
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="icon" href="./assets/logo-alquimia.jpeg" />
+    
   </head>
 
   <body>
@@ -102,7 +116,7 @@
             </div>
 
             <!-- Form -->
-  <form name="contacto" method="POST" data-netlify="true" action="/gracias.html" class="form">
+  <form name="contacto" method="POST" data-netlify="true" action="/gracias.html" class="form" id="contactForm">
   <input type="hidden" name="form-name" value="contacto" />
 
 
@@ -203,27 +217,7 @@
     </a>
 
     <script src="./js/cart.js"></script>
-    <script>
-      // contador carrito
-      document.addEventListener("DOMContentLoaded", () => {
-        if (window.QACart) window.QACart.updateCartCount();
-
-        // formulario: solo demo (no backend)
-        const form = document.getElementById("contactForm");
-        const hint = document.getElementById("formHint");
-        if (form) {
-          form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            if (hint) {
-              hint.textContent =
-                "✅ Mensaje listo. (Por ahora es visual; si quieres envío real, lo conectamos).";
-            }
-            form.reset();
-          });
-        }
-      });
-    </script>
-
+    
     <script>
       const yearEl = document.getElementById("year");
       if (yearEl) yearEl.textContent = new Date().getFullYear();

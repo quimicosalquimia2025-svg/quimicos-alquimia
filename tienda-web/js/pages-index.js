@@ -17,9 +17,10 @@ async function loadFeaturedProducts() {
     const data = await res.json();
     const products = data.products || [];
 
-    const featured = products.filter(
-      (p) => p.featured === true && p.active === true
-    );
+    const featured = products
+  .filter(p => p.featured === true && p.active === true);
+  featured.sort((a, b) => (a.featuredOrder ?? 9999) - (b.featuredOrder ?? 9999));
+  slice(0, 6);
 
     if (featured.length === 0) {
       grid.innerHTML = "<p>No hay ofertas destacadas por ahora.</p>";

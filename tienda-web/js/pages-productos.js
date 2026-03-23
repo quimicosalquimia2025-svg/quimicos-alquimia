@@ -132,12 +132,6 @@ function getQtyInCart(productId) {
   const item = cart.items.find((it) => it.id === productId);
   return item ? Number(item.qty || 0) : 0;
 }
-function getQtyInCart(productId) {
-  const cart = window.QACart?.getCart?.();
-  if (!cart || !cart.items) return 0;
-  const item = cart.items.find((it) => it.id === productId);
-  return item ? Number(item.qty || 0) : 0;
-}
 
 function paint(list) {
   const grid = document.getElementById("productsGrid");
@@ -157,10 +151,13 @@ function paint(list) {
       const available = Math.max(0, Number(p.stock || 0) - inCart);
       const out = available <= 0;
 
+      const imgSrc = (window.UI?.getImageSrc) ? window.UI.getImageSrc(p) : (p.image || "/assets/producto-placeholder.jpeg");
+      
       return `
         <article class="product-card">
-          <img class="product-card__img" src="${p.image || "./assets/producto-placeholder.jpg"}" alt="${escapeHtml(p.name)}" />
+          ./assets/producto-placeholder.jpg"}" alt="${escapeHtml(p.name)}" />
           <h3 class="product-card__title">${escapeHtml(p.name)}</h3>
+          ${p.featured ? `<div class="product-card__badge-offer">OFERTA</div>` : ""}
           <p class="product-card__desc">${escapeHtml(p.shortDescription || "")}</p>
 
           <div class="product-card__meta">
