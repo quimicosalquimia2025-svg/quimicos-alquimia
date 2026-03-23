@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://quimicosalquimia.netlify.app/sitemap.xml
