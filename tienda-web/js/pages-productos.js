@@ -150,32 +150,32 @@ function paint(list) {
       const inCart = getQtyInCart(p.id);
       const available = Math.max(0, Number(p.stock || 0) - inCart);
       const out = available <= 0;
-
-      const imgSrc = (window.UI?.getImageSrc) ? window.UI.getImageSrc(p) : (p.image || "/assets/producto-placeholder.jpeg");
+      const imgSrc = p.image || "/assets/producto-placeholder.jpeg";
       
-      return `
-        <article class="product-card">
-          ./assets/producto-placeholder.jpg"}" alt="${escapeHtml(p.name)}" />
-          <h3 class="product-card__title">${escapeHtml(p.name)}</h3>
-          ${p.featured ? `<div class="product-card__badge-offer">OFERTA</div>` : ""}
-          <p class="product-card__desc">${escapeHtml(p.shortDescription || "")}</p>
+      
+ return `
+  <article class="product-card">
+     <img class="product-card__img" src="${imgSrc}" alt="${escapeHtml(p.name)}" />
+     <h3 class="product-card__title">${escapeHtml(p.name)}</h3>
+     ${p.featured ? `<div class="product-card__badge-offer">OFERTA</div>` : ""}
+     <p class="product-card__desc">${escapeHtml(p.shortDescription || "")}</p>
 
-          <div class="product-card__meta">
-            <span class="product-card__price">${formatPrice(p.price || 0)}</span>
-            <span>${escapeHtml(p.unit || "")}</span>
-          </div>
+     <div class="product-card__meta">
+      <span class="product-card__price">${formatPrice(p.price || 0)}</span>
+      <span>${escapeHtml(p.unit || "")}</span>
+     </div>
 
-          <div class="product-card__badge ${out ? "product-card__badge--out" : ""}">
-            ${out ? "Sin stock" : `Disponible: ${available} (en carrito: ${inCart})`}
-          </div>
+     <div class="product-card__badge ${out ? "product-card__badge--out" : ""}">
+      ${out ? "Sin stock" : `Disponible: ${available} (en carrito: ${inCart})`}
+     </div>
 
-          <div class="product-card__actions">
-            <button class="btn btn--primary product-card__btn" data-id="${p.id}" ${out ? "disabled" : ""}>
-              Agregar al carrito
-            </button>
-          </div>
-        </article>
-      `;
+    <div class="product-card__actions">
+      <button class="btn btn--primary product-card__btn" data-id="${p.id}" ${out ? "disabled" : ""}>
+        Agregar al carrito
+      </button>
+    </div>
+  </article>
+`;
     })
     .join("");
 }

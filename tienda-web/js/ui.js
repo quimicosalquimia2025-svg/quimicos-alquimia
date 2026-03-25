@@ -2,12 +2,12 @@
 // Helpers de UI (render de productos y utilidades)
 // Compatible con imagenes locales (/assets/...) o URLs completas (Cloudinary)
 
-export function moneyCOP(value) {
+function moneyCOP(value) {
   const n = Number(value || 0);
   return n.toLocaleString("es-CO");
 }
 
-export function getImageSrc(p) {
+function getImageSrc(p) {
   // Si viene una URL completa (Cloudinary) se usa tal cual
   // Si viene vacío -> placeholder local
   const fallback = "/assets/producto-placeholder.jpeg";
@@ -25,7 +25,7 @@ export function getImageSrc(p) {
   return `/assets/${img}`;
 }
 
-export function productCardHTML(p) {
+function productCardHTML(p) {
   const imgSrc = getImageSrc(p);
 
   return `
@@ -57,7 +57,7 @@ export function productCardHTML(p) {
   `;
 }
 
-export function paintProductsGrid({ gridId, products = [] }) {
+function paintProductsGrid({ gridId, products = [] }) {
   const grid = document.getElementById(gridId);
   if (!grid) return;
 

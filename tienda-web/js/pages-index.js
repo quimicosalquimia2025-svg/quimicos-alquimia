@@ -4,6 +4,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   loadFeaturedProducts();
+  if (window.QACart) window.QACart.updateCartCount();
 });
 
 async function loadFeaturedProducts() {
@@ -18,9 +19,9 @@ async function loadFeaturedProducts() {
     const products = data.products || [];
 
     const featured = products
-  .filter(p => p.featured === true && p.active === true);
-  featured.sort((a, b) => (a.featuredOrder ?? 9999) - (b.featuredOrder ?? 9999));
-  slice(0, 6);
+      .filter((p) => p.featured === true && p.active === true)
+      .sort((a, b) => (a.featuredOrder ?? 9999) - (b.featuredOrder ?? 9999))
+      .slice(0, 6);
 
     if (featured.length === 0) {
       grid.innerHTML = "<p>No hay ofertas destacadas por ahora.</p>";
@@ -30,23 +31,22 @@ async function loadFeaturedProducts() {
     grid.innerHTML = featured
       .map(
         (p) => `
-        <article class="featured__item">
-          <h3 class="featured__title">${p.name}</h3>
-          <p class="featured__meta">
-            <span>${formatPrice(p.price)}</span>
-            <span>${p.unit}</span>
-          </p>
-          <button class="btn btn--primary featured__btn"data-id="${p.id}">
-            Agregar al carrito
-          </button>
-        </article>
-      `
+          <article class="featured__item">
+            <h3 class="featured__title">${p.name}</h3>
+            <p class="featured__meta">
+              <span>${formatPrice(p.price || 0)}</span>
+              <span>${p.unit || ""}</span>
+            </p>
+            <button class="btn btn--primary featured__btn" data-id="${p.id}">
+              Agregar al carrito
+            </button>
+          </article>
+        `
       )
       .join("");
   } catch (err) {
     console.error(err);
-    grid.innerHTML =
-      "<p>Error cargando productos. Revisa products.json.</p>";
+    grid.innerHTML = "<p>Error cargando productos. Revisa products.json.</p>";
   }
 }
 
@@ -57,9 +57,7 @@ function formatPrice(value) {
     maximumFractionDigits: 0,
   }).format(value);
 }
-document.addEventListener("DOMContentLoaded", () => {
-  if (window.QACart) window.QACart.updateCartCount();
-});
+
 // ===== Opción C: clicks en ofertas (Home) =====
 document.addEventListener("click", (e) => {
   const btn = e.target.closest(".featured__btn");
@@ -68,7 +66,6 @@ document.addEventListener("click", (e) => {
   const id = btn.getAttribute("data-id");
   if (!id) return;
 
-  // Para no depender de variables internas, leemos del JSON y buscamos el producto
   fetch("./data/products.json")
     .then((r) => r.json())
     .then((data) => {
@@ -78,6 +75,7 @@ document.addEventListener("click", (e) => {
 
       if (window.QACart) {
         window.QACart.addToCart(product, 1);
+        window.QACart.updateCartCount?.();
         btn.textContent = "Agregado ✓";
         setTimeout(() => (btn.textContent = "Agregar al carrito"), 900);
       }
