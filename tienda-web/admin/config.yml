@@ -11,8 +11,8 @@ media_library:
     api_key: "838966825439686"
 
 site_url: "/"
-display_url: "/"
-logo_url: "/assets/logo-alquimia.jpeg"
+display_url: https://quimicosalquimia.netlify.app
+logo_url: /assets/logo-alquimia.jpeg
 
 collections:
   - name: "catalogo"

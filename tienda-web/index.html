@@ -168,11 +168,30 @@
           <p class="cta__text">Déjanos tu correo.</p>
         </div>
 
-        <form class="cta-form" id="newsletterForm">
-          <label class="cta-form__label" for="email">Correo</label>
-          <input class="cta-form__input" type="email" id="email" placeholder="tunombre@correo.com" required />
-          <button class="btn btn--primary" type="submit">Suscribirme</button>
-        </form>
+<form 
+  name="newsletter" 
+  method="POST" 
+  data-netlify="true" 
+  action="/gracias.html" 
+  class="cta-form"
+>
+  <input type="hidden" name="form-name" value="newsletter" />
+
+  <label class="cta-form__label" for="email">Correo</label>
+
+  <input 
+    class="cta-form__input" 
+    type="email" 
+    id="email" 
+    name="email"
+    placeholder="tunombre@correo.com" 
+    required 
+  />
+
+  <button class="btn btn--primary" type="submit">
+    Suscribirme
+  </button>
+</form>
       </div>
     </section>
 
@@ -246,6 +265,20 @@
       });
     });
   }
-      </script>
+</script>
+
+     <div id="toast" style="
+         position: fixed;
+         bottom: 20px;
+         right: 20px;
+         background: #2e7d32;
+         color: white;
+         padding: 12px 18px;
+         border-radius: 8px;
+         display: none;
+         z-index: 999;
+     ">
+      Producto agregado al carrito
+     </div>
   </body>
 </html>

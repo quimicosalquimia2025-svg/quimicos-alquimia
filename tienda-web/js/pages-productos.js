@@ -213,11 +213,17 @@ document.addEventListener("click", (e) => {
   const add = (product) => {
     if (product && window.QACart) {
       window.QACart.addToCart(product, 1);
+      showToast("Producto agregado al carrito");
       window.QACart.updateCartCount();
-      btn.textContent = "Agregado ✓";
-      setTimeout(() => (btn.textContent = "Agregar al carrito"), 900);
-    }
-  };
+     btn.textContent = "✔ Agregado";
+btn.style.backgroundColor = "#2e7d32";
+
+setTimeout(() => {
+     btn.textContent = "Agregar al carrito";
+    btn.style.backgroundColor = "";
+    }, 1200);
+  }
+};
 
   if (useAll) {
     add(ALL_PRODUCTS.find((p) => p.id === id));

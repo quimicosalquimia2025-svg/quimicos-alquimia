@@ -46,7 +46,7 @@ async function loadFeaturedProducts() {
       .join("");
   } catch (err) {
     console.error(err);
-    grid.innerHTML = "<p>Error cargando productos. Revisa products.json.</p>";
+    grid.innerHTML = "<p>No hay ofertas disponibles en este momento.</p>";
   }
 }
 
