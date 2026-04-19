@@ -35,15 +35,16 @@ collections:
               - { label: "Descripción corta", name: "shortDescription", widget: "string", required: false }
               - { label: "Etiquetas", name: "tags", widget: "list", required: false, default: [] }
 
-              - label: "Categoría"
-                name: "category"
-                widget: "select"
-                options:
-                  - "limpieza"
-                  - "industria"
-                  - "hogar"
-                  - "automotriz"
-                  - "insumos para hacer velas"
+              - - label: "Categoría"
+                  name: "category"
+                  widget: "select"
+                  options:
+                   - limpieza
+                   - industria
+                   - hogar
+                   - automotriz
+                   - velas
+                   - cosmeticos
 
               - { label: "Precio (COP)", name: "price", widget: "number", value_type: "int", min: 0 }
               - { label: "Stock", name: "stock", widget: "number", value_type: "int", min: 0, default: 0 }
