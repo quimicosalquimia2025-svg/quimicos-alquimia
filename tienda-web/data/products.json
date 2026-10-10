@@ -111,6 +111,20 @@
       "category": "pruebas",
       "active": true,
       "image": ""
+    },     
+    {
+      "id": "01",
+      "name": "Parafina en gel",
+      "category": "velas",
+      "price": 32000,
+      "unit": "Vaso 14oz",
+      "stock": 20,
+      "featured": false,
+      "featuredOrder": 999,
+      "active": true,
+      "image": "https://res.cloudinary.com/drze17pey/image/upload/v1791581089/parafina_en_gel_uucxng.jpg",
+      "shortDescription": "",
+      "tags": []
     }
    ] 
   }
