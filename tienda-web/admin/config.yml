@@ -21,7 +21,7 @@ collections:
     files:
       - name: "productos"
         label: "Productos"
-        file: "data/products.json"
+        file: "tienda-web/data/products.json"
         fields:
           - label: "Productos"
             name: "products"
