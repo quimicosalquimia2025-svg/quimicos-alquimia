@@ -1,9 +1,4 @@
 {
-  "store": {
-    "name": "Químicos Alquimia",
-    "currency": "COP",
-    "whatsapp": "+573137935761"
-  },
   "products": [
     {
       "shortDescription": "Desinfección y limpieza general.",
@@ -29,7 +24,7 @@
       "active": true,
       "price": 12000,
       "name": "Desengrasante 1L",
-      "featured": true,
+      "featured": false,
       "stock": 30,
       "tags": [
         "motor",
@@ -111,7 +106,7 @@
       "active": true,
       "price": 7000,
       "name": "Esencia vainilla 30ml",
-      "featured": true,
+      "featured": false,
       "stock": 25,
       "tags": [
         "velas",
@@ -126,7 +121,7 @@
       "active": true,
       "price": 10000,
       "name": "Producto prueba Cloudinary",
-      "featured": true,
+      "featured": false,
       "stock": 5,
       "id": "test-cloudinary",
       "image": "",
@@ -160,5 +155,10 @@
       "image": "https://res.cloudinary.com/drzel7pey/image/upload/v1791671198/molde_estrella_con_numeros_ewqymx.jpg",
       "category": "velas"
     }
-  ]
+  ],
+  "store": {
+    "name": "Químicos Alquimia",
+    "currency": "COP",
+    "whatsapp": "+573137935761"
+  }
 }
